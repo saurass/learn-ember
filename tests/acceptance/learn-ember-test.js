@@ -14,4 +14,9 @@ module('Acceptance | learn ember', function(hooks) {
     await click('.button')
     assert.equal(currentURL(), '/contact', 'should navigate equal to /contact');
   });
+
+  test('checking the number in course page', async function(assert) {
+    await visit('/course');
+    assert.equal(this.element.querySelectorAll('.listing').length, 3, 'should display 3 listing');
+  });
 });
